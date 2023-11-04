@@ -4,6 +4,3 @@
 packages/
 bin*
 obj*
-
-*.csproj
-*.csproj.user
