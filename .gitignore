@@ -2,5 +2,5 @@
 
 .vs
 packages/
-bin*
+bin/
 obj*
