@@ -1,7 +1,9 @@
-.vs
-bin/
-obj/
+#These file/folders will be ignored by Git.
 
+.vs
+packages/
+bin*
+obj*
 
 *.csproj
 *.csproj.user
