@@ -29,14 +29,10 @@ namespace WindowsFormApp
             return new ConverterXMLContext(optionsBuilder.Options);
         }
 
-
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             CheckInputFields();
             LoadXMLFile(fullFilePath);
-           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -66,7 +62,6 @@ namespace WindowsFormApp
 
         private void AddRandomObjectToDB(List<RandomObject> randomObjects)
         {
-            
             try
             {
                 foreach (RandomObject obj in randomObjects)
@@ -76,10 +71,10 @@ namespace WindowsFormApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Oups : " + ex.Message);
+                MessageBox.Show("Error : " + ex.Message);
             }
 
-            MessageBox.Show("Successfuly added, check the db");
+            MessageBox.Show("Operation completed.");
         }
 
         private void LoadXMLFile(string filePath)

@@ -1,4 +1,4 @@
-namespace WindowsFormApp
+namespace WindowsFormApp.Presentation
 {
     internal static class Program
     {
