@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
+using System.Diagnostics;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using WindowsFormApp.AccesDonnees;
@@ -44,7 +45,7 @@ namespace WindowsFormApp
             openFile.Filter = "XML (*.xml)|*.xml";
             openFile.FilterIndex = 0;
             openFile.RestoreDirectory = true;
-            if(openFile
+            if (openFile
                 .ShowDialog() == DialogResult.OK)
             {
                 fullFilePath = openFile.FileName;
@@ -54,7 +55,7 @@ namespace WindowsFormApp
 
         private void CheckInputFields()
         {
-            if(textBox1.Text.Trim() == string.Empty)
+            if (textBox1.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Please select a file");
             }
@@ -62,11 +63,13 @@ namespace WindowsFormApp
 
         private void AddRandomObjectToDB(List<RandomObject> randomObjects)
         {
+            int i = 0;
             try
             {
                 foreach (RandomObject obj in randomObjects)
                 {
                     randomObjectRepository.AjouterRandomObject(obj);
+                    i++;
                 }
             }
             catch (Exception ex)
@@ -74,7 +77,7 @@ namespace WindowsFormApp
                 MessageBox.Show("Error : " + ex.Message);
             }
 
-            MessageBox.Show("Operation completed.");
+            MessageBox.Show("Operation completed : Items imported : " + i);
         }
 
         private void LoadXMLFile(string filePath)
@@ -92,10 +95,15 @@ namespace WindowsFormApp
                     AddRandomObjectToDB(randomObjects);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo { FileName = "\"https://github.com/becote/urban-dollop\"", UseShellExecute = true });
         }
     }
 }

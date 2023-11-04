@@ -3,7 +3,7 @@
 [Serializable]
 public class RandomObject
 {
-    public short IdRandomObj { get; set; }
+    public Guid IdRandomObj { get; set; }
     [XmlElement("name")]
     public string Name {  get; set; }
     [XmlElement("color")]

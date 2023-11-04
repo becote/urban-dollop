@@ -2,5 +2,6 @@
 
 .vs
 packages/
-bin/
+bin/Debug/
+bin/Release/
 obj*

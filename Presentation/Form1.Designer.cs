@@ -33,6 +33,8 @@
             label1 = new Label();
             button1 = new Button();
             button2 = new Button();
+            label2 = new Label();
+            linkLabel1 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -49,9 +51,9 @@
             // 
             textBox1.Location = new Point(12, 282);
             textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 1;
-            textBox1.ReadOnly = true;
             // 
             // label1
             // 
@@ -82,11 +84,33 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(400, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(299, 15);
+            label2.TabIndex = 5;
+            label2.Text = "Cette application est une demo d'un convertisseur XML";
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(512, 35);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(60, 15);
+            linkLabel1.TabIndex = 6;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Repository GitHub";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(linkLabel1);
+            Controls.Add(label2);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
@@ -106,5 +130,7 @@
         private Label label1;
         private Button button1;
         private Button button2;
+        private Label label2;
+        private LinkLabel linkLabel1;
     }
 }

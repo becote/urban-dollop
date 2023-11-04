@@ -17,8 +17,6 @@ namespace WindowsFormApp.Persistence
         #region Constructeur
         public ConverterXMLContext(DbContextOptions<ConverterXMLContext> options) : base(options)
         {
-            //For test purpuses
-            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         #endregion
@@ -36,8 +34,8 @@ namespace WindowsFormApp.Persistence
             builder.Entity<RandomObject>()
                 .Property(obj => obj.IdRandomObj)
                     .IsRequired()
-                    .HasColumnType("smallint")
-                    .ValueGeneratedOnAdd();// This sets the value to be generated on add
+                    .HasColumnType("uniqueidentifier")
+                    .HasDefaultValueSql("NEWID()");
             builder.Entity<RandomObject>()
                 .Property(obj => obj.Name)
                 .IsRequired();
