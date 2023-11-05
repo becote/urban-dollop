@@ -13,7 +13,7 @@ public class RandomObject
     [XmlElement("weight")]
     public string Weight { get; set; }
     [XmlElement("description")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
 }
 
 

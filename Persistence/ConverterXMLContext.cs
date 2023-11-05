@@ -17,6 +17,7 @@ namespace WindowsFormApp.Persistence
         #region Constructeur
         public ConverterXMLContext(DbContextOptions<ConverterXMLContext> options) : base(options)
         {
+            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         #endregion
@@ -41,7 +42,7 @@ namespace WindowsFormApp.Persistence
                 .IsRequired();
             builder.Entity<RandomObject>().Property(obj => obj.Color).IsRequired();
             builder.Entity<RandomObject>().Property(obj => obj.Size);
-            builder.Entity<RandomObject>().Property(obj => obj.Description).IsRequired();
+            builder.Entity<RandomObject>().Property(obj => obj.Description);
             builder.Entity<RandomObject>().Property(obj => obj.Weight).IsRequired();
             //Clé primaire 
             builder.Entity<RandomObject>()

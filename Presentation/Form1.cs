@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using System.Diagnostics;
-using System.Xml.Linq;
 using System.Xml.Serialization;
 using WindowsFormApp.AccesDonnees;
 using WindowsFormApp.Persistence;
